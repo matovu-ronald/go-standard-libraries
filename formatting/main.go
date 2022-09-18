@@ -3,42 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	x := 10
-	y := 12.25
+	f := 125.3378
 
-	// Basic formatting
-	fmt.Printf("%d\n", x)
-	fmt.Printf("%x\n", x)
+	// Control the precision
+	fmt.Printf("%.2f\n", f)
 
-	// Print Booleans using "True" or "False"
-	fmt.Printf("%t\n", x > 10)
+	// Print with width e.g 10 and default precision
+	fmt.Printf("%10f\n", f)
 
-	// Print floating point and exponential numbers
-	fmt.Printf("%f\n", y)
-	fmt.Printf("%e\n", y)
+	// Print with width e.g 10, padding and specific precision e.g .2
+	fmt.Printf("%10.3f\n", f)
 
-	// Using explicit argument indexes
-	fmt.Printf("%[2]d %[1]d\n", 20, 23)
+	// Always use a + sign
+	fmt.Printf("%+10.3f\n", f)
 
-	// Argument indexes can be used to print values repeatedly
-	fmt.Printf("%d %#[1]o %#[1]x\n", 15)
+	// Pad with 0s instead of spaces
+	fmt.Printf("%010.2f\n", f)
 
-	// Print a value in default format
-	c := circle{
-		radius: 7,
-		border: 2,
-	}
-
-	fmt.Printf("%+v\n", c)
-	fmt.Printf("%v\n", c)
-	fmt.Printf("%T\n", c)
-	// Sprintf works as Printf but returns a string
-	s := fmt.Sprintf("%[2]d %[1]d\n", 52, 40)
-	fmt.Println(s)
-
-}
-
-type circle struct {
-	radius int
-	border int
 }
